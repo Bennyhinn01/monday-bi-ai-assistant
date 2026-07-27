@@ -74,6 +74,9 @@ npm run dev
 - Docker Support
 - Role-Based Access
 - Export Reports (PDF/Excel)
+## Overview
+<img width="1095" height="585" alt="image" src="https://github.com/user-attachments/assets/d4e636af-12a8-495b-af26-35eef9796c11" />
+
 
 ## Author
 
