@@ -3,6 +3,7 @@ import axios from "axios";
 
 import Navbar from "./components/Navbar";
 import DashboardCards from "./components/DashboardCards";
+import Charts from "./components/Charts";
 import ChatBox from "./components/ChatBox";
 
 function App() {
@@ -18,17 +19,17 @@ function App() {
   }, []);
 
   const loadDashboard = async () => {
-  try {
-    const res = await axios.get("http://127.0.0.1:8000/dashboard");
+    try {
+      const res = await axios.get("http://127.0.0.1:8000/dashboard");
 
-    console.log(res.data);
+      console.log(res.data);
 
-    setDashboard(res.data);
-  } catch (err) {
-    console.log(err);
-    console.log(err.response);
-  }
-};
+      setDashboard(res.data);
+    } catch (err) {
+      console.error(err);
+      console.error(err.response);
+    }
+  };
 
   return (
     <div
@@ -40,8 +41,13 @@ function App() {
     >
       <Navbar />
 
-      <DashboardCards dashboard={dashboard} />
-      <ChatBox />
+      <div className="p-6">
+        <DashboardCards dashboard={dashboard} />
+
+        <Charts dashboard={dashboard} />
+
+        <ChatBox />
+      </div>
     </div>
   );
 }
